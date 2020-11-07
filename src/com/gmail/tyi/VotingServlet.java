@@ -31,13 +31,20 @@ public class VotingServlet extends HttpServlet {
 			throws ServletException, IOException {
 		response.setContentType("text/html");
 		
-		request.setAttribute("data", questionare);
-		RequestDispatcher rd = request.getRequestDispatcher("vote.jsp");
-		rd.forward(request, response);
+		String pageAdress = "vote.jsp";
+		
+		dataDispatcher(request, response, pageAdress);
 			
 		
 //		response.sendRedirect("vote.jsp");
 		
+	}
+
+	public void dataDispatcher(HttpServletRequest request, HttpServletResponse response, String pageAdress)
+			throws ServletException, IOException {
+		request.setAttribute("data", questionare);
+		RequestDispatcher rd = request.getRequestDispatcher(pageAdress);
+		rd.forward(request, response);
 	}
 
 	@Override
@@ -54,9 +61,9 @@ public class VotingServlet extends HttpServlet {
 			}
 		}
 		
-		request.setAttribute("data", questionare);
-		RequestDispatcher rd = request.getRequestDispatcher("result.jsp");
-		rd.forward(request, response);
+		String pageAdress = "result.jsp";
+		
+		dataDispatcher(request, response, pageAdress);
 		
 	}
 
