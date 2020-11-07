@@ -40,7 +40,7 @@ public class VotingServlet extends HttpServlet {
 		
 	}
 
-	public void dataDispatcher(HttpServletRequest request, HttpServletResponse response, String pageAdress)
+	private void dataDispatcher(HttpServletRequest request, HttpServletResponse response, String pageAdress)
 			throws ServletException, IOException {
 		request.setAttribute("data", questionare);
 		RequestDispatcher rd = request.getRequestDispatcher(pageAdress);
