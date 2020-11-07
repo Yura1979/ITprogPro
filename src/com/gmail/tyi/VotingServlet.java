@@ -58,7 +58,6 @@ public class VotingServlet extends HttpServlet {
 		RequestDispatcher rd = request.getRequestDispatcher("result.jsp");
 		rd.forward(request, response);
 		
-//		response.sendRedirect("result.jsp");
 	}
 
 }
